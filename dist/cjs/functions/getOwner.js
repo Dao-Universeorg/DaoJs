@@ -81,7 +81,7 @@ const raw = async ({ contracts, multicallWrapper }, name, contract) => {
     labels
   );
   const data = [registryData, nameWrapperData];
-  if (labels.length === 2 && labels[1] === "eth") {
+  if (labels.length === 2 && labels[1] === "dao") {
     data.push(registrarData);
   }
   return multicallWrapper.raw(data);
@@ -143,7 +143,7 @@ const decode = async ({
   const registryOwner = decodedData[0][0];
   const nameWrapperOwner = decodedData[1][0];
   let registrarOwner = (_b = decodedData[2]) == null ? void 0 : _b[0];
-  if (labels[labels.length - 1] === "eth") {
+  if (labels[labels.length - 1] === "dao") {
     if (!registrarOwner && labels.length === 2) {
       const graphRegistrantResult = await (gqlInstance == null ? void 0 : gqlInstance.request(
         registrantQuery,

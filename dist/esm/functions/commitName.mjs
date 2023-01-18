@@ -3,8 +3,8 @@ import { makeCommitment } from "../utils/registerHelpers.mjs";
 import { wrappedLabelLengthCheck } from "../utils/wrapper.mjs";
 async function commitName_default({ contracts }, name, { resolverAddress, ...params }) {
   const labels = name.split(".");
-  if (labels.length !== 2 || labels[1] !== "eth")
-    throw new Error("Currently only .eth TLD registrations are supported");
+  if (labels.length !== 2 || labels[1] !== "dao")
+    throw new Error("Currently only .dao TLD registrations are supported");
   wrappedLabelLengthCheck(labels[0]);
   const controller = await contracts.getEthRegistrarController();
   const resolver = await contracts.getPublicResolver(

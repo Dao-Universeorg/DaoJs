@@ -31,9 +31,9 @@ async function unwrapName_default({ contracts, signer }, name, {
   const labelhash = import_ethers.utils.solidityKeccak256(["string"], [labels[0]]);
   const parentNodehash = (0, import_normalise.namehash)(labels.slice(1).join("."));
   const nameWrapper = (await contracts.getNameWrapper()).connect(signer);
-  if (labels.length === 2 && labels[1] === "eth") {
+  if (labels.length === 2 && labels[1] === "dao") {
     if (!newRegistrant) {
-      throw new Error("newRegistrant must be specified for .eth names");
+      throw new Error("newRegistrant must be specified for .dao names");
     }
     return nameWrapper.populateTransaction.unwrapETH2LD(
       labelhash,
@@ -42,7 +42,7 @@ async function unwrapName_default({ contracts, signer }, name, {
     );
   }
   if (newRegistrant) {
-    throw new Error("newRegistrant can only be specified for .eth names");
+    throw new Error("newRegistrant can only be specified for .dao names");
   }
   return nameWrapper.populateTransaction.unwrap(
     parentNodehash,

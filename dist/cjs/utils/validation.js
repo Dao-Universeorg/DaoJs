@@ -68,7 +68,7 @@ const parseInputType = (input) => {
     const termArray = input.split(".");
     const tld = input.match(regex) ? input.match(regex)[0] : "";
     if (validTLD) {
-      if (tld === "eth" && [...termArray[termArray.length - 2]].length < 3) {
+      if (tld === "dao" && [...termArray[termArray.length - 2]].length < 3) {
         return {
           type: "name",
           info: "short"

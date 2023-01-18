@@ -17,7 +17,7 @@ async function transferName_default({ contracts, signer }, name, {
         signer
       );
       const labels = name.split(".");
-      if (labels.length > 2 || labels[labels.length - 1] !== "eth") {
+      if (labels.length > 2 || labels[labels.length - 1] !== "dao") {
         throw new Error("Invalid name for baseRegistrar");
       }
       const tokenId = ethers.utils.solidityKeccak256(["string"], [labels[0]]);

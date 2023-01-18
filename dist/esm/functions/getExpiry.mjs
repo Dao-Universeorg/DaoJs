@@ -2,8 +2,8 @@
 import { solidityKeccak256 } from "ethers/lib/utils.js";
 import { namehash } from "../utils/normalise.mjs";
 var getRegistrarExpiry = async ({ contracts, multicallWrapper }, labels) => {
-  if (labels.length > 2 || labels[1] !== "eth") {
-    throw new Error("Only .eth names have expiry dates on the registrar");
+  if (labels.length > 2 || labels[1] !== "dao") {
+    throw new Error("Only .dao names have expiry dates on the registrar");
   }
   const baseRegistrar = await contracts?.getBaseRegistrar();
   const expiryCall = baseRegistrar.interface.encodeFunctionData("nameExpires", [
@@ -34,7 +34,7 @@ var getWrapperExpiry = async ({ contracts }, labels) => {
 var getContractToUse = (contract, labels) => {
   if (contract)
     return contract;
-  if (labels.length === 2 && labels[1] === "eth") {
+  if (labels.length === 2 && labels[1] === "dao") {
     return "registrar";
   }
   return "nameWrapper";

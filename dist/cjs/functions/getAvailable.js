@@ -25,8 +25,8 @@ var import_labels = require("../utils/labels");
 const raw = async ({ contracts }, name) => {
   const baseRegistrar = await (contracts == null ? void 0 : contracts.getBaseRegistrar());
   const labels = name.split(".");
-  if (labels.length !== 2 || labels[1] !== "eth") {
-    throw new Error("Currently only .eth names can be checked for availability");
+  if (labels.length !== 2 || labels[1] !== "dao") {
+    throw new Error("Currently only .dao names can be checked for availability");
   }
   return {
     to: baseRegistrar.address,

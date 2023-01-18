@@ -3,8 +3,8 @@ import { labelhash } from "../utils/labels.mjs";
 var raw = async ({ contracts }, name) => {
   const baseRegistrar = await contracts?.getBaseRegistrar();
   const labels = name.split(".");
-  if (labels.length !== 2 || labels[1] !== "eth") {
-    throw new Error("Currently only .eth names can be checked for availability");
+  if (labels.length !== 2 || labels[1] !== "dao") {
+    throw new Error("Currently only .dao names can be checked for availability");
   }
   return {
     to: baseRegistrar.address,

@@ -48,7 +48,7 @@ async function wrapName_default({
     resolverAddress = publicResolver.address;
   const labels = name.split(".");
   wrappedLabelLengthCheck(labels[0]);
-  if (labels.length === 2 && labels[1] === "eth") {
+  if (labels.length === 2 && labels[1] === "dao") {
     switch (typeof fuseOptions) {
       case "object": {
         decodedFuses = generateFuseInput(fuseOptions);
@@ -84,11 +84,11 @@ async function wrapName_default({
   }
   if (fuseOptions)
     throw new Error(
-      "Fuses can not be initially set when wrapping a non .eth name"
+      "Fuses can not be initially set when wrapping a non .dao name"
     );
   if (expiry)
     throw new Error(
-      "Expiry can not be initially set when wrapping a non .eth name"
+      "Expiry can not be initially set when wrapping a non .dao name"
     );
   return wrapOther(
     { contracts },

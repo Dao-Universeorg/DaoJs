@@ -24,8 +24,8 @@ module.exports = __toCommonJS(getExpiry_exports);
 var import_utils = require("ethers/lib/utils");
 var import_normalise = require("../utils/normalise");
 const getRegistrarExpiry = async ({ contracts, multicallWrapper }, labels) => {
-  if (labels.length > 2 || labels[1] !== "eth") {
-    throw new Error("Only .eth names have expiry dates on the registrar");
+  if (labels.length > 2 || labels[1] !== "dao") {
+    throw new Error("Only .dao names have expiry dates on the registrar");
   }
   const baseRegistrar = await (contracts == null ? void 0 : contracts.getBaseRegistrar());
   const expiryCall = baseRegistrar.interface.encodeFunctionData("nameExpires", [
@@ -56,7 +56,7 @@ const getWrapperExpiry = async ({ contracts }, labels) => {
 const getContractToUse = (contract, labels) => {
   if (contract)
     return contract;
-  if (labels.length === 2 && labels[1] === "eth") {
+  if (labels.length === 2 && labels[1] === "dao") {
     return "registrar";
   }
   return "nameWrapper";

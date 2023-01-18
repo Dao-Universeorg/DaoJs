@@ -31,8 +31,8 @@ async function renewNameWithData({ contracts }, name, {
   wrapperExpiry = import_registerHelpers.MAX_INT_64
 }) {
   const labels = name.split(".");
-  if (labels.length !== 2 || labels[1] !== "eth") {
-    throw new Error("Currently only .eth TLD renewals are supported");
+  if (labels.length !== 2 || labels[1] !== "dao") {
+    throw new Error("Currently only .dao TLD renewals are supported");
   }
   const encodedFuses = fuses ? (0, import_fuses.validateFuses)(fuses) : 0;
   const controller = await contracts.getEthRegistrarController();
@@ -48,8 +48,8 @@ async function renewNames_default({ contracts }, nameOrNames, { duration, value 
   const names = Array.isArray(nameOrNames) ? nameOrNames : [nameOrNames];
   const labels = names.map((name) => {
     const label = name.split(".");
-    if (label.length !== 2 || label[1] !== "eth") {
-      throw new Error("Currently only .eth TLD renewals are supported");
+    if (label.length !== 2 || label[1] !== "dao") {
+      throw new Error("Currently only .dao TLD renewals are supported");
     }
     return label[0];
   });

@@ -36,7 +36,7 @@ const makeExpiry = async ({ getExpiry }, name, expiry) => {
     }
     return import_ethers.BigNumber.from(expiry);
   }
-  if (name.endsWith(".eth")) {
+  if (name.endsWith(".dao")) {
     const expResponse = await getExpiry(name);
     if (!(expResponse == null ? void 0 : expResponse.expiry))
       throw new Error("Couldn't get expiry for name, please provide one.");

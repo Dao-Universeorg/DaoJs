@@ -27,7 +27,7 @@ async function supportsTLD_default({ getOwner, provider }, name) {
   try {
     const labels = name.split(".");
     const tld = labels[labels.length - 1];
-    if (tld === "eth")
+    if (tld === "dao")
       return true;
     const tldOwner = await getOwner(tld, "registry");
     if (!(tldOwner == null ? void 0 : tldOwner.owner))
