@@ -6,9 +6,10 @@ import singleCall from "./utils/singleCall.mjs";
 import writeTx from "./utils/writeTx.mjs";
 var graphURIEndpoints = {
   1: "https://api.thegraph.com/subgraphs/name/ensdomains/ens",
-  5: "https://api.thegraph.com/subgraphs/name/daoalien/dns-subgraph",
   3: "https://api.thegraph.com/subgraphs/name/ensdomains/ensropsten",
-  4: "https://api.thegraph.com/subgraphs/name/ensdomains/ensrinkeby"
+  4: "https://api.thegraph.com/subgraphs/name/ensdomains/ensrinkeby",
+  5: "https://api.thegraph.com/subgraphs/name/daoalien/dns-subgraph",
+  420: "https://api.thegraph.com/subgraphs/name/daoalien/dnsoptimism"
 };
 var DNS = class {
   options;

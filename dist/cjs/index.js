@@ -34,9 +34,10 @@ var import_singleCall = __toESM(require("./utils/singleCall"));
 var import_writeTx = __toESM(require("./utils/writeTx"));
 const graphURIEndpoints = {
   1: "https://api.thegraph.com/subgraphs/name/ensdomains/ens",
-  5: "https://api.thegraph.com/subgraphs/name/daoalien/dns-subgraph",
   3: "https://api.thegraph.com/subgraphs/name/ensdomains/ensropsten",
-  4: "https://api.thegraph.com/subgraphs/name/ensdomains/ensrinkeby"
+  4: "https://api.thegraph.com/subgraphs/name/ensdomains/ensrinkeby",
+  5: "https://api.thegraph.com/subgraphs/name/daoalien/dns-subgraph",
+  420: "https://api.thegraph.com/subgraphs/name/daoalien/dnsoptimism"
 };
 class DNS {
   constructor(options) {

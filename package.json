@@ -1,6 +1,6 @@
 {
   "name": "@daouniverse/dnsjs",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "A Decentralized Autonomous Organization Name Service javascript library for contract interaction",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.mjs",
